@@ -63,7 +63,7 @@ class AwsS3 {
     if (key != null) {
       uploadKey = key;
     } else if (destDir.isNotEmpty) {
-      uploadKey = '$destDir/${filename ?? path.basename(file.path)}';
+      uploadKey = '$destDir${filename ?? path.basename(file.path)}';
     } else {
       uploadKey = '${filename ?? path.basename(file.path)}';
     }
