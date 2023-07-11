@@ -105,6 +105,8 @@ class AwsS3 {
     req.fields['X-Amz-Signature'] = signature;
     req.fields['Content-Type'] = contentType;
 
+    req.headers['Content-Length'] = '${req.contentLength}';
+
     // If metadata isn't null, add metadata params to the request.
     if (metadata != null) {
       req.fields.addAll(metadataParams);
